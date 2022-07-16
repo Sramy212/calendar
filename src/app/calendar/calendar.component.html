@@ -8,12 +8,14 @@
 <br>
 
 <div class="calendar">
-  <span *ngFor='let weekDay of weekDaysName' class="day">
-    <div *ngIf="weekDay === 'Sa' || weekDay === 'Su'; else elseBlock" style="background-color:rgb(230, 176, 176);">{{weekDay}}</div>
+  <button *ngFor='let weekDay of weekDaysName' class="day">
+    <div *ngIf="weekDay === 'Su'; else elseBlock">{{weekDay}}</div>
     <ng-template #elseBlock>{{ weekDay }}</ng-template>
-  </span>
+  </button>
 
-  <span *ngFor='let day of monthDays; let i = index' class="day">
-    {{ day.number }}
-  </span>
+  <button *ngFor='let day of monthDays; let i = index' class="day">
+    <a *ngIf="date1.getDate() === + day.number && date1.getMonth() === day.monthIndex && date1.getFullYear() === day.year; else elseBlock" style="background-color:rgb(255, 0, 0);">{{ day.number }} </a>
+    <ng-template #elseBlock>{{ day.number }} </ng-template>
+    
+  </button>
 </div>

@@ -10,6 +10,7 @@ export class CalendarCreator {
     this.currentMonthIndex = date.getMonth();
   }
 
+
   public getCurrentMonth(): Day[] {
     return this.getMonth(this.currentMonthIndex, this.currentYear);
   }

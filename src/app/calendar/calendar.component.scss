@@ -6,3 +6,7 @@
     display: inline-block;
   }
 }
+
+.day:nth-of-type(7n) {
+  background-color:red;
+  }

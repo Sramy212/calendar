@@ -8,6 +8,7 @@ import { Day } from "../models/day.model";
   styleUrls: ["./calendar.component.scss"],
 })
 export class CalendarComponent implements OnInit {
+  date1 = new Date();
   public monthDays!: Day[];
 
   public monthNumber!: number;
