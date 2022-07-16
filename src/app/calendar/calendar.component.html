@@ -1,0 +1,19 @@
+
+<div>
+  <button (click)="onPreviousMonth()"> Previous </button>
+  <span> {{ calendarCreator.getMonthName(monthNumber) }} &nbsp; {{ year }} </span>
+  <button (click)="onNextMonth()"> Next </button>
+</div>
+
+<br>
+
+<div class="calendar">
+  <span *ngFor='let weekDay of weekDaysName' class="day">
+    <div *ngIf="weekDay === 'Sa' || weekDay === 'Su'; else elseBlock" style="background-color:rgb(230, 176, 176);">{{weekDay}}</div>
+    <ng-template #elseBlock>{{ weekDay }}</ng-template>
+  </span>
+
+  <span *ngFor='let day of monthDays; let i = index' class="day">
+    {{ day.number }}
+  </span>
+</div>
